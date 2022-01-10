@@ -20,6 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.android.jetpackcomposeweather.repository.City
+import com.example.android.jetpackcomposeweather.repository.Weather
 import com.example.android.jetpackcomposeweather.ui.theme.JetpackComposeWeatherTheme
 
 class MainActivity : ComponentActivity() {
@@ -67,24 +69,23 @@ private fun CardContent(name: String) {
 }
 
 @Composable
-private fun Greeting(name: String) {
+private fun Greeting(cityName: String) {
     Card(
         backgroundColor = MaterialTheme.colors.primary,
         modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
-        CardContent(name)
+        CardContent(cityName)
     }
 }
 
 @Composable
-private fun Greetings(names: List<String> = List(1000) { "Auckland" }) {
+private fun Greetings(names: List<Weather> = City.getNorthCities()) {
     LazyColumn(modifier = Modifier.padding(vertical = 4.dp)) {
         items(items = names) { name ->
-            Greeting(name = name)
+            Greeting(cityName = name.city.city)
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
