@@ -1,4 +1,4 @@
-package com.example.android.jetpackcomposeweather.ui.componets
+package com.example.android.jetpackcomposeweather.ui.componets.main_screen
 
 import android.widget.Toast
 import androidx.compose.foundation.clickable
@@ -9,9 +9,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.example.android.jetpackcomposeweather.utils.Screen
 
 @Composable
-fun CityCard(cityName: String) {
+fun CityCard(cityName: String, navController: NavController) {
     val context = LocalContext.current
 
     Card(
@@ -22,6 +24,7 @@ fun CityCard(cityName: String) {
                 Toast
                     .makeText(context, cityName, Toast.LENGTH_LONG)
                     .show()
+                navController.navigate(Screen.DetailsScreen.withArgs(cityName))
             }
     ) {
         CardContent(cityName)

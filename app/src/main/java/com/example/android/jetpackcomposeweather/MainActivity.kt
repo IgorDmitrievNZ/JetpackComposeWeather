@@ -3,44 +3,45 @@ package com.example.android.jetpackcomposeweather
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import com.example.android.jetpackcomposeweather.repository.City
-import com.example.android.jetpackcomposeweather.ui.componets.CitiesList
-import com.example.android.jetpackcomposeweather.ui.componets.ImageNorth
-import com.example.android.jetpackcomposeweather.ui.componets.ImageSouth
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.example.android.jetpackcomposeweather.ui.componets.detail_screen.DetailScreen
+import com.example.android.jetpackcomposeweather.ui.componets.main_screen.MainScreen
 import com.example.android.jetpackcomposeweather.ui.theme.JetpackComposeWeatherTheme
+import com.example.android.jetpackcomposeweather.utils.Screen
 
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val navController = rememberNavController()
+
             JetpackComposeWeatherTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
 
-                    val isNorth = remember {
-                        mutableStateOf(true)
+                //main screen route
+                NavHost(navController = navController, startDestination = Screen.MainScreen.route) {
+                    composable(Screen.MainScreen.route) {
+                        MainScreen(navController = navController)
                     }
 
-                    CitiesList(if (isNorth.value) City.getNorthCities() else City.getSouthCities())
-
-                    Column(
-                        horizontalAlignment = Alignment.End,
-                        verticalArrangement = Arrangement.Bottom,
-                        modifier = Modifier.fillMaxSize(),
+                    //route to details
+                    composable(Screen.DetailsScreen.route + "/{city}",
+                        arguments = listOf(
+                            navArgument("city") {
+                                type = NavType.StringType
+                                defaultValue = "Auckland"
+                                nullable = true
+                            }
+                        )
                     ) {
-                        ImageNorth() { isNorth.value = true }
-                        ImageSouth() { isNorth.value = false }
+                        DetailScreen()
                     }
+
+                    //next route here
                 }
             }
         }

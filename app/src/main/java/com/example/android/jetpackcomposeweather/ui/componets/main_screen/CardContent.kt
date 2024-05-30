@@ -1,4 +1,4 @@
-package com.example.android.jetpackcomposeweather.ui.componets
+package com.example.android.jetpackcomposeweather.ui.componets.main_screen
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring

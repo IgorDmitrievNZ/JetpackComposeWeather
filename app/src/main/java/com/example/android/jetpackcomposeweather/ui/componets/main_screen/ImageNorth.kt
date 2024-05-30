@@ -1,4 +1,4 @@
-package com.example.android.jetpackcomposeweather.ui.componets
+package com.example.android.jetpackcomposeweather.ui.componets.main_screen
 
 import android.widget.Toast
 import androidx.compose.foundation.*
@@ -16,33 +16,28 @@ import androidx.compose.ui.unit.dp
 import com.example.android.jetpackcomposeweather.R
 
 @Composable
-fun ImageSouth(onSouthChange: () -> Unit) {
+fun ImageNorth(onNorthChange: () -> Unit) {
     val context = LocalContext.current
 
-    Box(modifier = Modifier
-        .padding(bottom = 20.dp, end = 20.dp)
-        .border(BorderStroke(3.dp, Color.Black), CircleShape)
-        .background(Color.White, CircleShape)
-        .padding(15.dp)
+    Box(
+        modifier = Modifier
+            .padding(bottom = 5.dp, end = 8.dp)
+            .border(BorderStroke(3.dp, Color.Black), CircleShape)
+            .background(Color.White, CircleShape)
+            .padding(15.dp)
     ) {
         Image(
-            painter = painterResource(R.drawable.south_map2),
             modifier = Modifier
                 .size(70.dp)
                 .clickable {
+                    onNorthChange()
                     Toast
-                        .makeText(
-                            context,
-                            "ImageSouth",
-                            Toast.LENGTH_LONG
-                        )
+                        .makeText(context, "ImageNorth", Toast.LENGTH_LONG)
                         .show()
-                    onSouthChange()
                 },
-
-            contentDescription = "South island picture",
+            painter = painterResource(R.drawable.north_map2),
+            contentDescription = "North island picture",
             contentScale = ContentScale.Inside,
-
         )
     }
 }
