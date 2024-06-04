@@ -6,10 +6,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.android.jetpackcomposeweather.repository.City
 
@@ -19,12 +18,10 @@ fun MainScreen(navController: NavController) {
     // A surface container using the 'background' color from the theme
     Surface(color = MaterialTheme.colors.background) {
 
-        val isNorth = remember {
-            mutableStateOf(true)
-        }
+        val viewModel = viewModel<MainViewModel>()
 
         CitiesList(
-            if (isNorth.value) City.getNorthCities() else City.getSouthCities(),
+            if (viewModel.isNorth) City.getNorthCities() else City.getSouthCities(),
             navController = navController
         )
 
@@ -33,8 +30,8 @@ fun MainScreen(navController: NavController) {
             verticalArrangement = Arrangement.Bottom,
             modifier = Modifier.fillMaxSize(),
         ) {
-            ImageNorth() { isNorth.value = true }
-            ImageSouth() { isNorth.value = false }
+            ImageNorth { viewModel.isNorth = true }
+            ImageSouth { viewModel.isNorth = false }
         }
     }
 }
