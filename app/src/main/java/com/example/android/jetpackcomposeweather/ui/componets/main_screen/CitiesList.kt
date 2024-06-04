@@ -7,10 +7,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.android.jetpackcomposeweather.repository.Weather
+import com.example.android.jetpackcomposeweather.repository.WeatherModel
 
 @Composable
-fun CitiesList(names: List<Weather>, navController: NavController) {
+fun CitiesList(names: List<WeatherModel>, navController: NavController) {
     LazyColumn(
         modifier = Modifier
             .padding(vertical = 4.dp)
