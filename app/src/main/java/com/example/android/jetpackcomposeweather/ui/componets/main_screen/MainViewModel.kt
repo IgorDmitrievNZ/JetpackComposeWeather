@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
-class MainViewModel() : ViewModel() {
+class MainViewModel : ViewModel() {
 
     var isNorth by mutableStateOf(true)
 }

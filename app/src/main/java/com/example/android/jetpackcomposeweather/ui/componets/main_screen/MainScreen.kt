@@ -22,7 +22,7 @@ fun MainScreen(navController: NavController) {
 
         CitiesList(
             if (viewModel.isNorth) City.getNorthCities() else City.getSouthCities(),
-            navController = navController
+            navController = navController,
         )
 
         Column(

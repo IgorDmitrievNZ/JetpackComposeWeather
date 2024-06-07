@@ -13,7 +13,7 @@ data class City(
 ) : Parcelable {
     companion object {
         fun getDefaultCity() = City(
-            "Auckland",
+            "Default City",
             "https://www.newzealand.com/assets/Tourism-NZ/Auckland/98618569ff/img-1536065871-6217-4403-p-10D1D0BD-B88E-AAB3-AE3F2E903EF65717-2544003__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg",
             -36.848461,
             174.763336
@@ -39,7 +39,7 @@ data class City(
             WeatherModel(
                 City(
                     "Westport",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FWestport%2C_New_Zealand&psig=AOvVaw25UVPT0PxfrJTBd1OzpMus&ust=1717552586723000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjT7ZTswIYDFQAAAAAdAAAAABAE",
+                    "https://nzjane.com/wp-content/uploads/2021/09/westport-new-zealand.jpg",
                     -41.7393,
                     171.5692
                 )
@@ -47,7 +47,7 @@ data class City(
             WeatherModel(
                 City(
                     "Christchurch",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FChristchurch_Central_City&psig=AOvVaw1XqkOU-A1T46bFBEfSYdz3&ust=1717552644365000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOjCurrswIYDFQAAAAAdAAAAABAE",
+                    "https://www.lovoirbeauty.com/wp-content/uploads/2023/07/3-1024x683.png",
                     -43.5333,
                     172.6333
                 )
@@ -55,7 +55,7 @@ data class City(
             WeatherModel(
                 City(
                     "Queenstown",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FQueenstown%2C_New_Zealand&psig=AOvVaw0aEV5--yUDHFX0TxFKg8X8&ust=1717552742207000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJjn7-jswIYDFQAAAAAdAAAAABAE",
+                    "https://www.newzealand.com/assets/Tourism-NZ/Other/44ccbbaaa5/img-1541739164-9832-26853-p-ADB13BEC-ED2C-A382-17771639B530DD44-2544003__aWxvdmVrZWxseQo_CropResizeWzUwMCwzNzUsODAsImpwZyJd.jpg",
                     -45.031162,
                     168.662643
                 )
@@ -63,7 +63,7 @@ data class City(
             WeatherModel(
                 City(
                     "Invercargill",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FInvercargill&psig=AOvVaw2-RwF0fa-Tvj6QvQ1wLPUA&ust=1717552835429000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjp_YvtwIYDFQAAAAAdAAAAABAj",
+                    "https://www.newzealand.com/assets/Tourism-NZ/Southland/7cb55c61a0/img-1536905832-5015-28487-p-7BA1311A-DD95-DC93-8A3C7FD86A8B26EF-2544003__aWxvdmVrZWxseQo_FocalPointCropWzM1MiwxMDI0LDQ2LDUwLDc1LCJqcGciLDY1LDIuNV0.jpg",
                     -46.4199795,
                     168.3073077
                 )
@@ -106,7 +106,7 @@ data class City(
             WeatherModel(
                 City(
                     "Whangarei",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.airnewzealand.com.au%2Fdestination-whangarei&psig=AOvVaw2enLZsaBEHha_zdgHKqSyS&ust=1717553298631000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCICNv-_uwIYDFQAAAAAdAAAAABAE",
+                    "https://www.newzealand.com/assets/Operator-Database/e9101a375d/img-1536320500-6989-9871-p-F6FCF3BE-C67F-DCD8-E6B3157D67BE111A-2544003__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg",
                     -35.7120022,
                     174.2036583
                 )
