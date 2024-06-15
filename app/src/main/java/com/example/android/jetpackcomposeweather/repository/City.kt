@@ -23,7 +23,7 @@ data class City(
             WeatherModel(
                 City(
                     "Nelson",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/NZL-nelson-christ-church-turm.jpg/220px-NZL-nelson-christ-church-turm.jpg",
+                    "https://kiwieducation.ru/nz/wp-content/uploads/sites/2/2021/01/downtown-nelson-new-zealand.jpg",
                     -41.270634,
                     173.283966
                 )
@@ -55,15 +55,23 @@ data class City(
             WeatherModel(
                 City(
                     "Queenstown",
-                    "https://www.newzealand.com/assets/Tourism-NZ/Other/44ccbbaaa5/img-1541739164-9832-26853-p-ADB13BEC-ED2C-A382-17771639B530DD44-2544003__aWxvdmVrZWxseQo_CropResizeWzUwMCwzNzUsODAsImpwZyJd.jpg",
+                    "https://w.forfun.com/fetch/27/27655dea7678e8aa111dcfe38ee654da.jpeg",
                     -45.031162,
                     168.662643
                 )
             ),
             WeatherModel(
                 City(
+                    "Milford Sound",
+                    "https://cattur.ru/wp-content/uploads/2018/12/milford-saund.jpg",
+                    -44.6714833,
+                    167.9189776
+                )
+            ),
+            WeatherModel(
+                City(
                     "Invercargill",
-                    "https://www.newzealand.com/assets/Tourism-NZ/Southland/7cb55c61a0/img-1536905832-5015-28487-p-7BA1311A-DD95-DC93-8A3C7FD86A8B26EF-2544003__aWxvdmVrZWxseQo_FocalPointCropWzM1MiwxMDI0LDQ2LDUwLDc1LCJqcGciLDY1LDIuNV0.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Civic_Theatre_in_Invercargill%2C_New_Zealand.JPG/1200px-Civic_Theatre_in_Invercargill%2C_New_Zealand.JPG",
                     -46.4199795,
                     168.3073077
                 )
@@ -79,7 +87,7 @@ data class City(
             WeatherModel(
                 City(
                     "Te Anau",
-                    "https://www.newzealand.com/assets/Tourism-NZ/Fiordland/9a0dc4d063/img-1536090612-477-26261-p-6B2D5629-E541-0D54-77B505A1D2A6C8D0-2544003__aWxvdmVrZWxseQo_FocalPointCropWzM1MiwxMDI0LDMzLDQ5LDc1LCJwbmciLDY1LDIuNV0.png",
+                    "https://upload.wikimedia.org/wikipedia/commons/9/98/Te_Anau_Jetty.JPG",
                     -45.416667,
                     167.716667
                 )
@@ -90,7 +98,7 @@ data class City(
             WeatherModel(
                 City(
                     "Auckland",
-                    "https://www.newzealand.com/assets/Tourism-NZ/Auckland/98618569ff/img-1536065871-6217-4403-p-10D1D0BD-B88E-AAB3-AE3F2E903EF65717-2544003__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg",
+                    "https://lh6.googleusercontent.com/wVwTqqrvITsmOJFh7ZfkPVpPpLkerDh8aNLgX_Af4Qe42sLG6GpRWru7Xxb-Dqy1O1-lu39HWrPXzLW4hikiWZHi8D-b-9ZKkfgTc6cKHPf6iFdE04znARRBHWOXrR4eiDCV6QW2Fm5C7pIproYnOm_Z6hoRKnfhTBk_dVnK_kF7LTZsuPn6wMvr",
                     -36.848461,
                     174.763336
                 )
@@ -106,7 +114,7 @@ data class City(
             WeatherModel(
                 City(
                     "Whangarei",
-                    "https://www.newzealand.com/assets/Operator-Database/e9101a375d/img-1536320500-6989-9871-p-F6FCF3BE-C67F-DCD8-E6B3157D67BE111A-2544003__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg",
+                    "https://ic.pics.livejournal.com/alexeyosokin/55047576/1019694/1019694_original.jpg",
                     -35.7120022,
                     174.2036583
                 )
@@ -146,7 +154,7 @@ data class City(
             WeatherModel(
                 City(
                     "Gisborne",
-                    "https://www.newzealand.com/assets/Gisborne__aWxvdmVrZWxseQo_FocalPointCropWzM1MiwxMDI0LDUwLDUwLDc1LCJqcGciLDY1LDIuNV0.jpg",
+                    "https://traveltimes.ru/wp-content/uploads/2021/11/1603409282764.jpg",
                     -38.662334,
                     178.017654
                 )
@@ -162,7 +170,7 @@ data class City(
             WeatherModel(
                 City(
                     "Palmerston North",
-                    "https://www.newzealand.com/assets/Tourism-NZ/Manawatu/The-Square-Palmerston-North-ManawatuNZ__aWxvdmVrZWxseQo_FocalPointCropWzM1MiwxMDI0LDUwLDUwLDc1LCJqcGciLDY1LDIuNV0.co.nz.jpg",
+                    "https://i.pinimg.com/originals/fc/cc/93/fccc93924af3c57011779e6518f8cf2a.jpg",
                     -40.3564,
                     175.6111
                 )
