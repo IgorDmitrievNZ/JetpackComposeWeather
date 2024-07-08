@@ -6,7 +6,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 
 object NetworkDataSource {
-    private const val BASE_URL = "https://api.github.com/"
+    private const val BASE_URL = "https://api.weather.yandex.ru/v2/"
 
     /**
      * Use the Retrofit builder to build a retrofit object using a kotlinx.serialization converter
