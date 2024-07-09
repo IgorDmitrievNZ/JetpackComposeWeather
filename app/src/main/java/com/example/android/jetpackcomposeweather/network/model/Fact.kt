@@ -17,7 +17,7 @@ data class Fact(
     @SerialName("pressure_pa") val pressurePa: Int?,
     val season: String?,
     val temp: Int?,
-    @SerialName("temp_water") val tempWater: Int?,
+    @SerialName("temp_water") val tempWater: Int? = null,
     @SerialName("wind_dir") val windDir: String?,
     @SerialName("wind_gust") val windGust: Double?,
     @SerialName("wind_speed") val windSpeed: Double?

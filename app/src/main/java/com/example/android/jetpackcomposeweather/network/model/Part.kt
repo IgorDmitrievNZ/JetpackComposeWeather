@@ -13,7 +13,7 @@ data class Part(
     val icon: String?,
     @SerialName("part_name") val partName: String?,
     val polar: Boolean?,
-    @SerialName("prec_mm") val precMm: Int?,
+    @SerialName("prec_mm") val precMm: Double?,
     @SerialName("prec_period") val precPeriod: Int?,
     @SerialName("prec_prob") val precProb: Int?,
     @SerialName("pressure_mm") val pressureMm: Int?,
@@ -21,7 +21,7 @@ data class Part(
     @SerialName("temp_avg") val tempAvg: Int?,
     @SerialName("temp_max") val tempMax: Int?,
     @SerialName("temp_min") val tempMin: Int?,
-    @SerialName("temp_water") val tempWater: Int?,
+    @SerialName("temp_water") val tempWater: Int? = null,
     @SerialName("wind_dir") val windDir: String?,
     @SerialName("wind_gust") val windGust: Double?,
     @SerialName("wind_speed") val windSpeed: Double?
