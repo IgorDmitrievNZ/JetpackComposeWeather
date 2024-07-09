@@ -2,8 +2,8 @@ package com.example.android.jetpackcomposeweather.ui.componets.detail_screen
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.android.jetpackcomposeweather.repository.City
-import com.example.android.jetpackcomposeweather.repository.WeatherModel
+import com.example.android.jetpackcomposeweather.repository.model.City
+import com.example.android.jetpackcomposeweather.repository.model.WeatherModel
 
 class DetailsViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
 

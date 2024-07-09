@@ -1,4 +1,4 @@
-package com.example.android.jetpackcomposeweather.repository
+package com.example.android.jetpackcomposeweather.repository.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.android.jetpackcomposeweather.repository.City
+import com.example.android.jetpackcomposeweather.repository.model.City
 
 @Composable
 fun MainScreen(navController: NavController) {
