@@ -1,45 +1,23 @@
 package com.example.android.jetpackcomposeweather.ui.componets.detail_screen
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import coil.compose.AsyncImage
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.android.jetpackcomposeweather.ui.componets.error_screen.ErrorScreen
+import com.example.android.jetpackcomposeweather.ui.componets.loading_screen.LoadingScreen
 
 @Composable
 fun DetailScreen() {
+    val viewModel = hiltViewModel<DetailsViewModel>()
 
-    val viewModel = viewModel<DetailsViewModel>()
+    when (viewModel.detailsUiState) {
 
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        AsyncImage(
-            model = viewModel.cityModel?.city?.image,
-            contentScale = ContentScale.Crop,
-            contentDescription = " City image",
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(0.5f)
-                .padding(5.dp)
+        is DetailsViewModel.DetailsUiState.Loading -> LoadingScreen()
+
+        is DetailsViewModel.DetailsUiState.Success -> WeatherDetailsContent(
+            (viewModel.detailsUiState as DetailsViewModel.DetailsUiState.Success).weather
         )
-        Text(modifier = Modifier.padding(5.dp), text = "City ${viewModel.cityName}")
-        Text(
-            modifier = Modifier.padding(5.dp),
-            text = "Condition ${viewModel.cityModel?.condition}"
-        )
-        Text(
-            modifier = Modifier.padding(5.dp),
-            text = "Temperature ${viewModel.cityModel?.temperature}"
-        )
-        Text(
-            modifier = Modifier.padding(5.dp),
-            text = "Fills like ${viewModel.cityModel?.feelsLike}"
-        )
+
+        is DetailsViewModel.DetailsUiState.Error -> ErrorScreen()
     }
 }
+
