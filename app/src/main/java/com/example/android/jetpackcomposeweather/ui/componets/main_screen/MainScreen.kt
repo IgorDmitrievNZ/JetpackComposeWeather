@@ -20,10 +20,13 @@ fun MainScreen(navController: NavController) {
 
         val viewModel = viewModel<MainViewModel>()
 
-        CitiesList(
-            if (viewModel.isNorth) City.getNorthCities() else City.getSouthCities(),
-            navController = navController,
-        )
+        Column {
+            MainCityCard(viewModel.chosenCity)
+            CitiesList(
+                if (viewModel.isNorth) City.getNorthCities() else City.getSouthCities(),
+                navController = navController,
+            )
+        }
 
         Column(
             horizontalAlignment = Alignment.End,
