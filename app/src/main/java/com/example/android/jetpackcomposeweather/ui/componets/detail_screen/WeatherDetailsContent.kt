@@ -28,7 +28,8 @@ fun WeatherDetailsContent(detailsDTO: DetailsViewModel.WeatherDetailsModel) {
                 .fillMaxHeight(0.5f)
                 .padding(5.dp)
         )
-        Text(modifier = Modifier.padding(5.dp), text = "City ${viewModel.cityName}")
+        Text(modifier = Modifier.padding(5.dp),
+            text = "City ${viewModel.cityName}")
         Text(
             modifier = Modifier.padding(5.dp),
             text = "Condition ${detailsDTO.condition}"
@@ -40,6 +41,18 @@ fun WeatherDetailsContent(detailsDTO: DetailsViewModel.WeatherDetailsModel) {
         Text(
             modifier = Modifier.padding(5.dp),
             text = "Fills like ${detailsDTO.feelsLike}"
+        )
+        Text(
+            modifier = Modifier.padding(5.dp),
+            text = "Humidity ${detailsDTO.humidity} %"
+        )
+        Text(
+            modifier = Modifier.padding(5.dp),
+            text = "Wind direction ${detailsDTO.windDir}"
+        )
+        Text(
+            modifier = Modifier.padding(5.dp),
+            text = "Wind speed ${detailsDTO.windSpeed} meters per second"
         )
     }
 }

@@ -35,7 +35,10 @@ class DetailsViewModel @Inject constructor(
     data class WeatherDetailsModel(
         val temp: Int?,
         val feelsLike: Int?,
-        val condition: String?
+        val condition: String?,
+        val humidity: Int?,
+        val windDir: String?,
+        val windSpeed: Double?
     )
 
     init {
@@ -50,7 +53,10 @@ class DetailsViewModel @Inject constructor(
                 val details = WeatherDetailsModel(
                     temp = detailsResult.fact?.temp,
                     feelsLike = detailsResult.fact?.feelsLike,
-                    condition = detailsResult.fact?.condition
+                    condition = detailsResult.fact?.condition,
+                    humidity = detailsResult.fact?.humidity,
+                    windDir = detailsResult.fact?.windDir,
+                    windSpeed = detailsResult.fact?.windSpeed
                 )
                 DetailsUiState.Success(details)
             } catch (e: IOException) {
