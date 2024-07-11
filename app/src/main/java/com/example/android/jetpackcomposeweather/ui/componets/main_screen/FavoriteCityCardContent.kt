@@ -19,13 +19,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
+import com.example.android.jetpackcomposeweather.ui.componets.error_screen.ErrorScreen
+import com.example.android.jetpackcomposeweather.ui.componets.loading_screen.LoadingScreen
 
 @Composable
 fun FavoriteCityCardContent(cityName: String) {
 
-    val viewModel = viewModel<MainViewModel>()
+    val viewModel = hiltViewModel<MainViewModel>()
 
     Row(
         modifier = Modifier
@@ -44,7 +46,7 @@ fun FavoriteCityCardContent(cityName: String) {
             modifier = Modifier
                 .clip(CircleShape)
                 .border(BorderStroke(3.dp, Color.Black), CircleShape)
-                .size(150.dp)
+                .size(140.dp)
         )
 
 
@@ -60,20 +62,34 @@ fun FavoriteCityCardContent(cityName: String) {
                     fontWeight = FontWeight.ExtraBold
                 )
             )
-            Text(
-                text = "Temperature 22°C",
-                style = MaterialTheme.typography.h6,
-                modifier = Modifier.padding(top = 10.dp)
-            )
-            Text(
-                text = "Wind speed 10 m/s",
-                style = MaterialTheme.typography.h6
-            )
-            Text(
-                text = "Cloudy",
-                style = MaterialTheme.typography.h6
-            )
+
+            when (viewModel.favoriteDetailsUiState) {
+
+                is MainViewModel.FavoriteDetailsUiState.Loading -> LoadingScreen()
+
+                is MainViewModel.FavoriteDetailsUiState.Success -> FavoriteDetailsContent((viewModel.favoriteDetailsUiState as MainViewModel.FavoriteDetailsUiState.Success).weather)
+
+                is MainViewModel.FavoriteDetailsUiState.Error -> ErrorScreen()
+            }
+
         }
 
+    }
+}
+
+@Composable
+private fun FavoriteDetailsContent(contentModelDTO: MainViewModel.FavoriteCityModel) {
+
+    Text(
+        text = "Temperature ${contentModelDTO.temp}°C",
+        style = MaterialTheme.typography.h6,
+        modifier = Modifier.padding(top = 10.dp)
+    )
+    Text(
+        text = "Wind speed ${contentModelDTO.windSpeed} m/s",
+        style = MaterialTheme.typography.h6
+    )
+    contentModelDTO.condition?.let {
+        Text(text = it, style = MaterialTheme.typography.h6)
     }
 }

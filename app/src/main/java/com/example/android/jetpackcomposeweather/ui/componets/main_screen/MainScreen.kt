@@ -8,7 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.android.jetpackcomposeweather.repository.model.City
 
@@ -18,7 +18,7 @@ fun MainScreen(navController: NavController) {
     // A surface container using the 'background' color from the theme
     Surface(color = MaterialTheme.colors.background) {
 
-        val viewModel = viewModel<MainViewModel>()
+        val viewModel = hiltViewModel<MainViewModel>()
 
         Column {
             FavoriteCityCard(viewModel.favoriteCityName)
