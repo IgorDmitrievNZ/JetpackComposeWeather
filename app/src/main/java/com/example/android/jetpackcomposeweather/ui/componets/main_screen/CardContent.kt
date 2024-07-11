@@ -19,9 +19,10 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.android.jetpackcomposeweather.repository.model.City
 
 @Composable
-fun CardContent(name: String, image: String) {
+fun CardContent(city: City) {
 
     Row(
         modifier = Modifier
@@ -33,7 +34,7 @@ fun CardContent(name: String, image: String) {
                 )
             )
     ) {
-        FavoriteIcon(name, image)
+        FavoriteIcon(city)
         Column(
             modifier = Modifier
                 .weight(1f)
@@ -41,7 +42,7 @@ fun CardContent(name: String, image: String) {
         ) {
             Text(text = "New Zealand ")
             Text(
-                text = name,
+                text = city.city,
                 style = MaterialTheme.typography.h4.copy(
                     fontWeight = FontWeight.ExtraBold
                 )
@@ -52,14 +53,13 @@ fun CardContent(name: String, image: String) {
 }
 
 @Composable
-private fun FavoriteIcon(city: String, image: String) {
+private fun FavoriteIcon(city: City) {
     val viewModel = viewModel<MainViewModel>()
 
     IconToggleButton(
         checked = false,
         onCheckedChange = {
-            viewModel.favoriteCityName = city
-            viewModel.favoriteCityImage = image
+            viewModel.onFavoriteToggle(city)
         }
     ) {
         Icon(
@@ -67,7 +67,7 @@ private fun FavoriteIcon(city: String, image: String) {
                 scaleX = 1.3f
                 scaleY = 1.3f
             },
-            imageVector = if (viewModel.favoriteCityName == city) {
+            imageVector = if (viewModel.favoriteCityName == city.city) {
                 Icons.Filled.Favorite
             } else {
                 Icons.Default.FavoriteBorder

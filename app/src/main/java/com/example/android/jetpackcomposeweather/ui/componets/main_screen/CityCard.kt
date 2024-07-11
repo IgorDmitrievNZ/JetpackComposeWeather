@@ -10,10 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.android.jetpackcomposeweather.repository.model.City
 import com.example.android.jetpackcomposeweather.utils.Screen
 
 @Composable
-fun CityCard(cityName: String, cityImage: String, navController: NavController) {
+fun CityCard(city: City, navController: NavController) {
     val context = LocalContext.current
 
     Card(
@@ -22,11 +23,11 @@ fun CityCard(cityName: String, cityImage: String, navController: NavController) 
             .padding(vertical = 4.dp, horizontal = 8.dp)
             .clickable {
                 Toast
-                    .makeText(context, cityName, Toast.LENGTH_LONG)
+                    .makeText(context, city.city, Toast.LENGTH_LONG)
                     .show()
-                navController.navigate(Screen.DetailsScreen.withArgs(cityName))
+                navController.navigate(Screen.DetailsScreen.withArgs(city.city))
             }
     ) {
-        CardContent(cityName, cityImage)
+        CardContent(city)
     }
 }
