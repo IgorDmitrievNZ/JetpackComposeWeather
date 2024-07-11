@@ -8,5 +8,6 @@ import androidx.lifecycle.ViewModel
 class MainViewModel : ViewModel() {
 
     var isNorth by mutableStateOf(true)
-    var favoriteCity by mutableStateOf("Auckland")
+    var favoriteCityName by mutableStateOf("Auckland")
+    var favoriteCityImage by mutableStateOf("https://lh6.googleusercontent.com/wVwTqqrvITsmOJFh7ZfkPVpPpLkerDh8aNLgX_Af4Qe42sLG6GpRWru7Xxb-Dqy1O1-lu39HWrPXzLW4hikiWZHi8D-b-9ZKkfgTc6cKHPf6iFdE04znARRBHWOXrR4eiDCV6QW2Fm5C7pIproYnOm_Z6hoRKnfhTBk_dVnK_kF7LTZsuPn6wMvr")
 }

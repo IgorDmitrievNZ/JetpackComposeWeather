@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun CardContent(name: String) {
+fun CardContent(name: String, image: String) {
 
     Row(
         modifier = Modifier
@@ -33,7 +33,7 @@ fun CardContent(name: String) {
                 )
             )
     ) {
-        FavoriteIcon(name)
+        FavoriteIcon(name, image)
         Column(
             modifier = Modifier
                 .weight(1f)
@@ -52,13 +52,14 @@ fun CardContent(name: String) {
 }
 
 @Composable
-private fun FavoriteIcon(city: String) {
+private fun FavoriteIcon(city: String, image: String) {
     val viewModel = viewModel<MainViewModel>()
 
     IconToggleButton(
         checked = false,
         onCheckedChange = {
-            viewModel.favoriteCity = city
+            viewModel.favoriteCityName = city
+            viewModel.favoriteCityImage = image
         }
     ) {
         Icon(
@@ -66,7 +67,7 @@ private fun FavoriteIcon(city: String) {
                 scaleX = 1.3f
                 scaleY = 1.3f
             },
-            imageVector = if (viewModel.favoriteCity == city) {
+            imageVector = if (viewModel.favoriteCityName == city) {
                 Icons.Filled.Favorite
             } else {
                 Icons.Default.FavoriteBorder

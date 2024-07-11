@@ -13,7 +13,7 @@ import androidx.navigation.NavController
 import com.example.android.jetpackcomposeweather.utils.Screen
 
 @Composable
-fun CityCard(cityName: String, navController: NavController) {
+fun CityCard(cityName: String, cityImage: String, navController: NavController) {
     val context = LocalContext.current
 
     Card(
@@ -27,6 +27,6 @@ fun CityCard(cityName: String, navController: NavController) {
                 navController.navigate(Screen.DetailsScreen.withArgs(cityName))
             }
     ) {
-        CardContent(cityName)
+        CardContent(cityName, cityImage)
     }
 }

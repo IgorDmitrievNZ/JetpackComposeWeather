@@ -19,10 +19,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 
 @Composable
-fun MainCityCardContent(cityName: String) {
+fun FavoriteCityCardContent(cityName: String) {
+
+    val viewModel = viewModel<MainViewModel>()
+
     Row(
         modifier = Modifier
             .padding(12.dp)
@@ -34,7 +38,7 @@ fun MainCityCardContent(cityName: String) {
             )
     ) {
         AsyncImage(
-            model = "https://lh6.googleusercontent.com/wVwTqqrvITsmOJFh7ZfkPVpPpLkerDh8aNLgX_Af4Qe42sLG6GpRWru7Xxb-Dqy1O1-lu39HWrPXzLW4hikiWZHi8D-b-9ZKkfgTc6cKHPf6iFdE04znARRBHWOXrR4eiDCV6QW2Fm5C7pIproYnOm_Z6hoRKnfhTBk_dVnK_kF7LTZsuPn6wMvr",
+            model = viewModel.favoriteCityImage,
             contentScale = ContentScale.Crop,
             contentDescription = " City image",
             modifier = Modifier

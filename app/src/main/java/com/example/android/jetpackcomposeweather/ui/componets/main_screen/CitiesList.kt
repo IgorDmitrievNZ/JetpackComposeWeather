@@ -16,7 +16,7 @@ fun CitiesList(names: List<WeatherModel>, navController: NavController) {
             .padding(vertical = 4.dp)
     ) {
         items(items = names) { item ->
-            CityCard(cityName = item.city.city, navController)
+            CityCard(cityName = item.city.city, item.city.image, navController)
         }
     }
 }

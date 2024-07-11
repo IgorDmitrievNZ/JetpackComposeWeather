@@ -9,13 +9,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MainCityCard(chosenCity: String) {
+fun FavoriteCityCard(chosenCity: String) {
     Card(
         backgroundColor = MaterialTheme.colors.secondaryVariant,
         modifier = Modifier
             .fillMaxHeight(0.35f)
             .padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
-        MainCityCardContent(cityName = chosenCity)
+        FavoriteCityCardContent(cityName = chosenCity)
     }
 }
