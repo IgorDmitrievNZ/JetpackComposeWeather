@@ -8,5 +8,5 @@ import androidx.lifecycle.ViewModel
 class MainViewModel : ViewModel() {
 
     var isNorth by mutableStateOf(true)
-    var chosenCity by mutableStateOf("Auckland")
+    var favoriteCity by mutableStateOf("Auckland")
 }

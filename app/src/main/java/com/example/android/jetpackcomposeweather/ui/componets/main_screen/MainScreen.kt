@@ -21,7 +21,7 @@ fun MainScreen(navController: NavController) {
         val viewModel = viewModel<MainViewModel>()
 
         Column {
-            MainCityCard(viewModel.chosenCity)
+            MainCityCard(viewModel.favoriteCity)
             CitiesList(
                 if (viewModel.isNorth) City.getNorthCities() else City.getSouthCities(),
                 navController = navController,
